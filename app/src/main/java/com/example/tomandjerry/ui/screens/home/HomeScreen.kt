@@ -22,7 +22,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .background(color = AntiFlashWhite)
-            //todo review padding at top
             .padding(horizontal = 16.dp)
     ) {
         HeaderHomeScreen()

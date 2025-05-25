@@ -39,7 +39,6 @@ fun TomKitchenScreen(modifier: Modifier = Modifier) {
             modifier = modifier
                 .align(Alignment.TopCenter)
                 .fillMaxSize()
-                //todo make background mix
                 .background(SemiTransparentBlue)
                 .padding(top = 48.dp)
 

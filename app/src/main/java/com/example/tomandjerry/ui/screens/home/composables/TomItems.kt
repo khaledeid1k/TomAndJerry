@@ -27,7 +27,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
@@ -52,10 +51,9 @@ data class TomItem(
 fun TomItemsHomeScreen(modifier: Modifier = Modifier) {
     val toms: List<TomItem> = listOf(
         TomItem(
-            //todo draw line at five
             R.drawable.cat1,
             "Sport Tom",
-            "He runs 1 meter... trips\n over his boot.",
+            "He runs 1 meter... trips over his boot.",
             "3",
             "5"
         ),
@@ -149,15 +147,9 @@ fun TomItemsHeader(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
 @Composable
 fun TomItemCard(
-    modifier: Modifier = Modifier, tom: TomItem = TomItem(
-        R.drawable.notification,
-        "Sleeping Tom",
-        "He loves one-sidedly... and is beaten by the other side.",
-        "5 3"
-    )
+    modifier: Modifier = Modifier, tom: TomItem
 ) {
     Box(
         contentAlignment = Alignment.TopCenter,
@@ -194,9 +186,8 @@ fun TomItemCard(
                         )
                         .align(Alignment.CenterHorizontally),
                     color = SpanishGray,
-                    //todo enhance line
                     textAlign = TextAlign.Center,
-                    maxLines = 2,
+                    minLines = 3,
                     lineHeight = 18.sp,
                     overflow = TextOverflow.MiddleEllipsis,
                     fontSize = 12.sp,
