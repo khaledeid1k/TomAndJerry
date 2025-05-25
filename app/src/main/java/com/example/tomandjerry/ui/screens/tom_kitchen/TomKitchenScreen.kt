@@ -48,14 +48,15 @@ fun TomKitchenScreen(modifier: Modifier = Modifier) {
             Column(
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
-                    .weight(1f)
+                    .padding(bottom = 58.dp)
+
             ) {
                 KitchenHeaderSection()
             }
             Card(
                 shape = RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp),
                 modifier = Modifier
-                    .weight(4f)
+
                     .fillMaxSize()
 
             ) {
