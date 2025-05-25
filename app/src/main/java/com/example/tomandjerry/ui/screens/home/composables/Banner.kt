@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -69,6 +70,7 @@ fun BannerHomeScreen(modifier: Modifier = Modifier) {
             }
             Image(
                 modifier = Modifier
+                    .clip(RoundedCornerShape(bottomEnd = 30.dp))
                     .offset(y = (-11).dp, x = (40).dp)
                     .align(Alignment.TopEnd)
                     .size(width = 155.dp, height = 130.dp),
