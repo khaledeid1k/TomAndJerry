@@ -83,6 +83,7 @@ fun AccountScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
             }
+            VerticalSpacer(space = 24.dp)
 
         }
 
