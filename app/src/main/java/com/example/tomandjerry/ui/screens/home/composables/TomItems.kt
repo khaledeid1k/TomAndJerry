@@ -45,6 +45,7 @@ data class TomItem(
     val title: String,
     val description: String,
     val price: String,
+    val discount: String = "",
 )
 
 @Composable
@@ -55,7 +56,8 @@ fun TomItemsHomeScreen(modifier: Modifier = Modifier) {
             R.drawable.cat1,
             "Sport Tom",
             "He runs 1 meter... trips\n over his boot.",
-            "5 3"
+            "3",
+            "5"
         ),
         TomItem(
             R.drawable.cat2,
@@ -208,6 +210,7 @@ fun TomItemCard(
                     horizontalArrangement = Arrangement.Center
                 ) {
                     CheesesItem(
+                        discount = tom.discount,
                         price = tom.price,
                         modifier = Modifier.padding(
                             vertical = 6.dp,

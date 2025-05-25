@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
@@ -23,7 +24,8 @@ import com.example.tomandjerry.ui.theme.ibmPlexSans
 @Composable
 fun CheesesItem(
     modifier: Modifier = Modifier,
-    price: String
+    price: String,
+    discount: String = ""
 ) {
     Card(
         modifier = modifier,
@@ -49,15 +51,28 @@ fun CheesesItem(
                 tint = MediumElectricBlue
 
             )
-            Text(
-                text = "$price cheeses",
-                modifier = Modifier.padding(end = 10.dp),
-                color = MediumElectricBlue,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Medium,
-                fontFamily = ibmPlexSans
+            Row {
+                Text(
+                    text = discount,
+                    modifier = Modifier,
+                    color = MediumElectricBlue,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Medium,
+                    fontFamily = ibmPlexSans,
+                    textDecoration = TextDecoration.LineThrough,
 
-            )
+                    )
+                Text(
+                    text = " $price cheeses",
+                    modifier = Modifier.padding(end = 10.dp),
+                    color = MediumElectricBlue,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Medium,
+                    fontFamily = ibmPlexSans
+
+                )
+            }
+
         }
     }
 }
