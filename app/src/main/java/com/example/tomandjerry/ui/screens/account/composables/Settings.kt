@@ -3,10 +3,9 @@ package com.example.tomandjerry.ui.screens.account.composables
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,11 +28,11 @@ fun Settings(modifier: Modifier = Modifier) {
         Setting(image = R.drawable.cat, title = "Meow settings"),
         Setting(image = R.drawable.fridge, title = "Password to open the fridge"),
     )
-    LazyColumn(
+    Column(
         verticalArrangement = Arrangement.spacedBy(12.dp),
         modifier = modifier
     ) {
-        items(settings) { setting ->
+        settings.forEach { setting ->
             SettingItem(setting = setting)
         }
     }
@@ -48,13 +47,14 @@ fun Favorites(modifier: Modifier = Modifier) {
         Setting(image = R.drawable.hamburger, title = "Last stolen meal"),
         Setting(image = R.drawable.sleeping, title = "Change sleep mood"),
     )
-    LazyColumn(
+    Column(
         verticalArrangement = Arrangement.spacedBy(12.dp),
         modifier = modifier
     ) {
-        items(favorites) { favorite ->
+        favorites.forEach { favorite ->
             SettingItem(setting = favorite)
         }
+
     }
 
 }
