@@ -26,6 +26,14 @@ val AzureishWhite = Color(0xFFD0E5F0)
 val SemiTransparentBlue = Color(0x80035484)
 val OceanBlue = Color(0xFF035587)
 val LapisLazuli = Color(0xFF226993)
+val JellyBeanBlue = Color(0xFF3D7BA0)
+val MintCream = Color(0xFFDEEECD)
+val SoftRose = Color(0xFFF2D9E7)
+val VanillaCream = Color(0xFFFAEDCF)
+val ScrimDark87 = Color(0xDE1F1F1E)
+
+
+
 
 
 
