@@ -1,4 +1,4 @@
-package com.example.tomandjerry.ui.screens.tom_kitchen.composables
+package com.example.tomandjerry.ui.screens.TomKitchen.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

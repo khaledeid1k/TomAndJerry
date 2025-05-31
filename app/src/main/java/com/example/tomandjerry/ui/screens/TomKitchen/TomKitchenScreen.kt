@@ -1,4 +1,4 @@
-package com.example.tomandjerry.ui.screens.tom_kitchen
+package com.example.tomandjerry.ui.screens.TomKitchen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,11 +20,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tomandjerry.R
 import com.example.tomandjerry.ui.composables.VerticalSpacer
-import com.example.tomandjerry.ui.screens.tom_kitchen.composables.AddToCartButton
-import com.example.tomandjerry.ui.screens.tom_kitchen.composables.DetailsSection
-import com.example.tomandjerry.ui.screens.tom_kitchen.composables.DishInfo
-import com.example.tomandjerry.ui.screens.tom_kitchen.composables.KitchenHeaderSection
-import com.example.tomandjerry.ui.screens.tom_kitchen.composables.preparationSteps
+import com.example.tomandjerry.ui.screens.TomKitchen.composables.AddToCartButton
+import com.example.tomandjerry.ui.screens.TomKitchen.composables.DetailsSection
+import com.example.tomandjerry.ui.screens.TomKitchen.composables.DishInfo
+import com.example.tomandjerry.ui.screens.TomKitchen.composables.KitchenHeaderSection
+import com.example.tomandjerry.ui.screens.TomKitchen.composables.preparationSteps
 import com.example.tomandjerry.ui.theme.AntiFlashWhite
 import com.example.tomandjerry.ui.theme.SemiTransparentBlue
 import com.example.tomandjerry.ui.theme.TomAndJerryTheme
