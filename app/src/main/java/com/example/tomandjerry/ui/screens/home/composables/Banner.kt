@@ -29,24 +29,18 @@ import com.example.tomandjerry.ui.theme.ibmPlexSans
 
 @Composable
 fun BannerHomeScreen(modifier: Modifier = Modifier) {
-    Card(
-        modifier = modifier,
-        colors = CardDefaults.cardColors(
-            containerColor = Color.Transparent
-        )
-    ) {
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .background(Color.Transparent, RoundedCornerShape(16.dp))
         ) {
 
-            Box(
+            Card(
+                colors = CardDefaults.cardColors(containerColor = AteneoBlue),
+                shape = RoundedCornerShape(16.dp),
                 modifier = Modifier
-
                     .fillMaxWidth()
                     .padding(top = 16.dp)
-                    .background(AteneoBlue, RoundedCornerShape(16.dp))
             ) {
                 Column(
                     modifier = Modifier.padding(12.dp)
@@ -81,5 +75,4 @@ fun BannerHomeScreen(modifier: Modifier = Modifier) {
 
                 )
         }
-    }
 }

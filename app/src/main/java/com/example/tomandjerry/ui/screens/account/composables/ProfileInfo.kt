@@ -3,14 +3,10 @@ package com.example.tomandjerry.ui.screens.account.composables
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,24 +59,28 @@ fun ProfileStatus(modifier: Modifier = Modifier) {
             description = "Heartbroken"
         ),
     )
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    Column(
         modifier = modifier
-            .fillMaxWidth()
             .padding(top = 23.dp)
+            .fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        items(status) { status ->
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
+        status.chunked(2).forEach { chunk ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Status(status = status)
+                chunk.forEach { item ->
+                    Status(
+                        status = item,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
             }
         }
     }
-
 }
 
 @Composable

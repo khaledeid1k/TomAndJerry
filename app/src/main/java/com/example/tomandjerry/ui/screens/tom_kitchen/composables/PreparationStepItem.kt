@@ -2,13 +2,11 @@ package com.example.tomandjerry.ui.screens.tom_kitchen.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,30 +19,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.ui.composables.HorizontalSpacer
+import com.example.tomandjerry.ui.composables.VerticalSpacer
 import com.example.tomandjerry.ui.theme.AzureishWhite
 import com.example.tomandjerry.ui.theme.OceanBlue
 import com.example.tomandjerry.ui.theme.darkOverlay
 import com.example.tomandjerry.ui.theme.ibmPlexSans
 
-@Composable
-fun PreparationSteps(modifier: Modifier = Modifier) {
+fun LazyListScope.preparationSteps() {
     val preparationSteps: List<PreparationStep> = listOf(
         PreparationStep("1", "Put the pasta in a toaster."),
         PreparationStep("2", "Pour battery juice over it."),
         PreparationStep("3", "Wait for the spark to ignite."),
         PreparationStep("4", "Serve with an insulating glove."),
     )
-    LazyColumn(
-        modifier = modifier,
-        contentPadding = PaddingValues(bottom = 80.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        items(preparationSteps) { preparationStep ->
-            PreparationStepItem(preparationStep = preparationStep)
-        }
+    items(items = preparationSteps,
+        key = { step -> step.number }
+    ) { preparationStep ->
+        PreparationStepItem(preparationStep = preparationStep)
+        VerticalSpacer(space = 8.dp)
     }
-
 }
 
 @Composable
@@ -56,7 +49,6 @@ fun PreparationStepItem(modifier: Modifier = Modifier, preparationStep: Preparat
             .fillMaxWidth()
             .background(Color.White, RoundedCornerShape(16.dp))
     ) {
-        //todo fix circle
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -85,7 +77,6 @@ fun PreparationStepItem(modifier: Modifier = Modifier, preparationStep: Preparat
             color = darkOverlay,
             fontFamily = ibmPlexSans,
             fontWeight = FontWeight.Normal,
-            modifier = Modifier.padding(vertical = 8.dp)
         )
     }
 }

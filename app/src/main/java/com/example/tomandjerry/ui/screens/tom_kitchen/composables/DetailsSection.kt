@@ -1,7 +1,6 @@
 package com.example.tomandjerry.ui.screens.tom_kitchen.composables
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
@@ -62,10 +61,5 @@ fun DetailsSection() {
         color = DeepSlate,
     )
     VerticalSpacer(space = 8.dp)
-    Column(
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        PreparationSteps()
-        VerticalSpacer(space = 8.dp)
-    }
+
 }

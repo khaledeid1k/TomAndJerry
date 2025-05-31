@@ -4,16 +4,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -47,8 +45,7 @@ data class TomItem(
     val discount: String = "",
 )
 
-@Composable
-fun TomItemsHomeScreen(modifier: Modifier = Modifier) {
+fun LazyListScope.tomItemsHomeScreen() {
     val toms: List<TomItem> = listOf(
         TomItem(
             R.drawable.cat1,
@@ -89,60 +86,64 @@ fun TomItemsHomeScreen(modifier: Modifier = Modifier) {
         ),
 
         )
-    Column(modifier = modifier) {
-        TomItemsHeader()
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            contentPadding = PaddingValues(8.dp),
-            modifier = Modifier.fillMaxSize()
+    val chunkedToms = toms.chunked(2)
+
+    items(chunkedToms) { rowItems ->
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(toms) { tom ->
+            rowItems.forEach { tom ->
                 Box(
                     modifier = Modifier
+                        .weight(1f)
                         .fillMaxWidth()
                 ) {
                     TomItemCard(tom = tom)
                 }
             }
+            if (rowItems.size < 2) {
+                VerticalSpacer(modifier = Modifier.weight(1f))
+            }
         }
-
     }
 }
 
 
 @Composable
 fun TomItemsHeader(modifier: Modifier = Modifier) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            "Cheap tom section",
-            color = EerieBlack,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.SemiBold,
-            fontFamily = ibmPlexSans
-        )
+    Column(modifier) {
         Row(
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                "View all",
-                color = MidnightBlue,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Medium,
+                "Cheap tom section",
+                color = EerieBlack,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.SemiBold,
                 fontFamily = ibmPlexSans
             )
-            HorizontalSpacer(space = 4.dp)
-            Icon(
-                painter = painterResource(id = R.drawable.arrow_right),
-                contentDescription = null,
-                tint = MidnightBlue
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    "View all",
+                    color = MidnightBlue,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Medium,
+                    fontFamily = ibmPlexSans
+                )
+                HorizontalSpacer(space = 4.dp)
+                Icon(
+                    painter = painterResource(id = R.drawable.arrow_right),
+                    contentDescription = null,
+                    tint = MidnightBlue
+                )
+            }
         }
     }
 }
