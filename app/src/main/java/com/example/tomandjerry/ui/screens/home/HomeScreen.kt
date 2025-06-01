@@ -8,11 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.tomandjerry.ui.composables.TomItemsHeader
 import com.example.tomandjerry.ui.composables.VerticalSpacer
 import com.example.tomandjerry.ui.screens.home.composables.BannerHomeScreen
 import com.example.tomandjerry.ui.screens.home.composables.HeaderHomeScreen
 import com.example.tomandjerry.ui.screens.home.composables.SearchHomeScreen
-import com.example.tomandjerry.ui.screens.home.composables.TomItemsHeader
 import com.example.tomandjerry.ui.screens.home.composables.tomItemsHomeScreen
 import com.example.tomandjerry.ui.theme.AntiFlashWhite
 import com.example.tomandjerry.ui.theme.TomAndJerryTheme
@@ -33,7 +33,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             VerticalSpacer(space = 24.dp)
             BannerHomeScreen()
             VerticalSpacer(space = 24.dp)
-            TomItemsHeader()
+            TomItemsHeader(
+                title = "Cheap tom section"
+            )
         }
         tomItemsHomeScreen()
     }

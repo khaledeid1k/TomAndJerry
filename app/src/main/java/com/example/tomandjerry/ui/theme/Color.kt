@@ -2,9 +2,6 @@ package com.example.tomandjerry.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
 
 val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
@@ -18,7 +15,6 @@ val MediumElectricBlue = Color(0xFF03578A)
 val AteneoBlue = Color(0xFF03446A)
 val AntiFlashWhite = Color(0xFFEEF4F6)
 val MidnightBlue = Color(0xFF035486)
-val AliceBlue = Color(0xFFE9F6FB)
 val DeepSlate = Color(0xDD1F1F1E)
 val darkOverlay = Color(0x99121212)
 val DarkGrayDimmed = Color(0x5E121212)
@@ -29,8 +25,17 @@ val LapisLazuli = Color(0xFF226993)
 val JellyBeanBlue = Color(0xFF3D7BA0)
 val MintCream = Color(0xFFDEEECD)
 val SoftRose = Color(0xFFF2D9E7)
+val BlueCola = Color(0xFF0085E3)
+val WinterWizard = Color(0xFFA3DCFF)
 val VanillaCream = Color(0xFFFAEDCF)
 val ScrimDark87 = Color(0xDE1F1F1E)
+val white24 = Color(0x24FFFFFF)
+val Independence = Color(0xFF485568)
+val Blond = Color(0xFFFCF2C5)
+val ClassicRose = Color(0xFFFCC5E4)
+val Diamond = Color(0xFFC5E7FC)
+val darkGray60 = Color(0x991F1F1E)
+
 
 
 

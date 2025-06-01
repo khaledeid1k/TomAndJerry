@@ -29,11 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
 import com.example.tomandjerry.ui.composables.CheesesItem
-import com.example.tomandjerry.ui.composables.HorizontalSpacer
 import com.example.tomandjerry.ui.composables.VerticalSpacer
 import com.example.tomandjerry.ui.theme.EerieBlack
 import com.example.tomandjerry.ui.theme.MediumElectricBlue
-import com.example.tomandjerry.ui.theme.MidnightBlue
 import com.example.tomandjerry.ui.theme.SpanishGray
 import com.example.tomandjerry.ui.theme.ibmPlexSans
 
@@ -110,43 +108,6 @@ fun LazyListScope.tomItemsHomeScreen() {
     }
 }
 
-
-@Composable
-fun TomItemsHeader(modifier: Modifier = Modifier) {
-    Column(modifier) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(
-                "Cheap tom section",
-                color = EerieBlack,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.SemiBold,
-                fontFamily = ibmPlexSans
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    "View all",
-                    color = MidnightBlue,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    fontFamily = ibmPlexSans
-                )
-                HorizontalSpacer(space = 4.dp)
-                Icon(
-                    painter = painterResource(id = R.drawable.arrow_right),
-                    contentDescription = null,
-                    tint = MidnightBlue
-                )
-            }
-        }
-    }
-}
 
 @Composable
 fun TomItemCard(
