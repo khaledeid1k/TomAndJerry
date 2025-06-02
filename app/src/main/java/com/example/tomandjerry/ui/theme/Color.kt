@@ -37,6 +37,8 @@ val ClassicRose = Color(0xFFFCC5E4)
 val Diamond = Color(0xFFC5E7FC)
 val darkGray60 = Color(0x991F1F1E)
 val Cultured = Color(0xFFF8F8F8)
+val gray = Color(0x141A1F14)
+
 
 
 

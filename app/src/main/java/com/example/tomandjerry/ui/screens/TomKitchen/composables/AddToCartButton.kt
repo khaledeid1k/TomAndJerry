@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Icon
@@ -32,8 +33,9 @@ fun AddToCartButton(modifier: Modifier = Modifier) {
             disabledContainerColor = Color.White,
             disabledContentColor = Color.White
         ),
+        shape = RoundedCornerShape(16.dp),
+        //todo review steps view
         modifier = modifier
-
             .background(Color.White)
             .fillMaxWidth()
             .padding(vertical = 15.dp, horizontal = 16.dp),

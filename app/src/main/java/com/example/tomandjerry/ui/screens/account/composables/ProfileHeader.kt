@@ -52,7 +52,6 @@ fun ProfileHeader(modifier: Modifier = Modifier) {
             fontFamily = ibmPlexSans,
             color = Color.White,
         )
-        VerticalSpacer(space = 4.dp)
         Text(
             "specializes in failure!",
             fontSize = 12.sp,

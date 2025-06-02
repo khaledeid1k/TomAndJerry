@@ -91,7 +91,6 @@ fun Status(modifier: Modifier = Modifier, status: Status) {
             .background(
                 color = status.color, shape = RoundedCornerShape(12.dp),
             ),
-        horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(

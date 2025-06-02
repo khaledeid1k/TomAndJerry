@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,6 +35,7 @@ import com.example.tomandjerry.ui.theme.LapisLazuli
 import com.example.tomandjerry.ui.theme.ScrimDark87
 import com.example.tomandjerry.ui.theme.TomAndJerryTheme
 import com.example.tomandjerry.ui.theme.darkOverlay
+import com.example.tomandjerry.ui.theme.gray
 import com.example.tomandjerry.ui.theme.ibmPlexSans
 
 @Composable
@@ -41,9 +43,8 @@ fun AccountScreen(modifier: Modifier = Modifier) {
     Box(modifier) {
         Column(
             modifier = Modifier
-
                 .background(LapisLazuli)
-                .verticalScroll(rememberScrollState())
+
         ) {
             ProfileHeader(
                 modifier = Modifier
@@ -51,6 +52,7 @@ fun AccountScreen(modifier: Modifier = Modifier) {
             )
             Box(
                 modifier = Modifier
+                    .verticalScroll(rememberScrollState())
                     .fillMaxSize()
                     .clip(RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp))
                     .background(color = AntiFlashWhite)
@@ -60,29 +62,36 @@ fun AccountScreen(modifier: Modifier = Modifier) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(horizontal = 16.dp)
+
                 ) {
-                    ProfileStatus()
+                    ProfileStatus(modifier = Modifier.padding(horizontal = 16.dp))
                     VerticalSpacer(space = 24.dp)
                     Text(
-                        "Tom settings",
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        text = "Tom settings",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = ibmPlexSans,
                         color = ScrimDark87,
                     )
                     VerticalSpacer(space = 8.dp)
-                    Settings()
+                    Settings(modifier = Modifier.padding(horizontal = 16.dp))
                     VerticalSpacer(space = 12.dp)
+                    HorizontalDivider(
+                        modifier = Modifier.fillMaxWidth(),
+                        color = gray,
+                        thickness = 1.dp
+                    )
                     Text(
-                        "His favorite foods",
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        text = "His favorite foods",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = ibmPlexSans,
                         color = ScrimDark87,
                     )
                     VerticalSpacer(space = 8.dp)
-                    Favorites()
+                    Favorites(modifier = Modifier.padding(horizontal = 16.dp))
                     VerticalSpacer(space = 24.dp)
                     Text(
                         text = "v.TomBeta",

@@ -122,6 +122,7 @@ fun TomItemCard(
     )
 ) {
     Box(
+        modifier = Modifier.padding(top = 16.dp),
         contentAlignment = Alignment.TopCenter,
     ) {
         Card(
@@ -158,7 +159,7 @@ fun TomItemCard(
                     color = SpanishGray,
                     textAlign = TextAlign.Center,
                     minLines = 3,
-                    lineHeight = 18.sp,
+                    lineHeight = 16.sp,
                     overflow = TextOverflow.MiddleEllipsis,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Normal,
@@ -195,9 +196,6 @@ fun TomItemCard(
             modifier = Modifier
                 .width(100.dp)
                 .height(100.dp)
-//                .offset(
-//                    y = (-16).dp
-//                )
         )
     }
 }
