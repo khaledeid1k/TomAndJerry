@@ -25,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
@@ -109,9 +110,16 @@ fun LazyListScope.tomItemsHomeScreen() {
 }
 
 
+@Preview
 @Composable
 fun TomItemCard(
-    modifier: Modifier = Modifier, tom: TomItem
+    modifier: Modifier = Modifier, tom: TomItem = TomItem(
+        R.drawable.cat1,
+        "Sport Tom",
+        "He runs 1 meter... trips over his boot.",
+        "3",
+        "5"
+    )
 ) {
     Box(
         contentAlignment = Alignment.TopCenter,
@@ -127,7 +135,7 @@ fun TomItemCard(
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .padding(top = 92.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
