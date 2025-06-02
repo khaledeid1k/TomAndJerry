@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
 import com.example.tomandjerry.ui.composables.VerticalSpacer
 import com.example.tomandjerry.ui.theme.JellyBeanBlue
-import com.example.tomandjerry.ui.theme.LapisLazuli
 import com.example.tomandjerry.ui.theme.ibmPlexSans
 
 @Composable
@@ -32,7 +31,6 @@ fun ProfileHeader(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
             .fillMaxWidth()
-            .background(LapisLazuli)
             .padding(horizontal = 16.dp)
             .padding(top = 16.dp, bottom = 8.dp)
 
