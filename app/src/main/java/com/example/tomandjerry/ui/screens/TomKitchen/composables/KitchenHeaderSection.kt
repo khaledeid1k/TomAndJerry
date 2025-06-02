@@ -1,7 +1,6 @@
 package com.example.tomandjerry.ui.screens.TomKitchen.composables
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,9 +11,7 @@ import com.example.tomandjerry.ui.composables.VerticalSpacer
 @Composable
 fun KitchenHeaderSection(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(horizontal = 16.dp)
+        modifier = modifier.padding(horizontal = 16.dp)
 
     ) {
         HeaderTomKitchenScreen(

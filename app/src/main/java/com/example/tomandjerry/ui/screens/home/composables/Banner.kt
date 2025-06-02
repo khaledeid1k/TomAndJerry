@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -25,25 +25,27 @@ import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
 import com.example.tomandjerry.ui.composables.VerticalSpacer
 import com.example.tomandjerry.ui.theme.AteneoBlue
+import com.example.tomandjerry.ui.theme.RichElectricBlue
 import com.example.tomandjerry.ui.theme.ibmPlexSans
 
 @Composable
 fun BannerHomeScreen(modifier: Modifier = Modifier) {
         Box(
-            modifier = modifier
-                .fillMaxWidth()
-                .background(Color.Transparent, RoundedCornerShape(16.dp))
+            modifier = modifier.fillMaxWidth()
         ) {
-
-            Card(
-                colors = CardDefaults.cardColors(containerColor = AteneoBlue),
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp)
-            ) {
                 Column(
-                    modifier = Modifier.padding(12.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp)
+                        .background(
+                            shape = RoundedCornerShape(16.dp),
+                            brush = Brush.linearGradient(
+                                colors = listOf(AteneoBlue, RichElectricBlue),
+                                start = Offset(0f, 0f),
+                                end = Offset(0f, Float.POSITIVE_INFINITY)
+                            )
+                        )
+                        .padding(12.dp)
                 ) {
                     Text(
                         text = "Buy 1 Tom and get 2 for free",
@@ -61,7 +63,18 @@ fun BannerHomeScreen(modifier: Modifier = Modifier) {
                         fontFamily = ibmPlexSans
                     )
                 }
-            }
+
+            Image(
+                modifier = Modifier.align(Alignment.TopEnd),
+                painter = painterResource(id = R.drawable.ellipse_1),
+                contentDescription = null,
+            )
+            Image(
+                modifier = Modifier.align(Alignment.TopEnd),
+                painter = painterResource(id = R.drawable.ellipse_2),
+                contentDescription = null,
+            )
+
             Image(
                 modifier = Modifier
                     .clip(RoundedCornerShape(bottomEnd = 30.dp))

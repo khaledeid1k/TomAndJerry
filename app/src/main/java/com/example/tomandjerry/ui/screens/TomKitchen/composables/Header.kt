@@ -1,6 +1,7 @@
 package com.example.tomandjerry.ui.screens.TomKitchen.composables
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -18,7 +19,7 @@ fun HeaderTomKitchenScreen(
     icon: Int,
     title: String
 ) {
-    Row {
+    Row(modifier = Modifier.fillMaxWidth()) {
         Icon(
             painter = painterResource(id = icon),
             contentDescription = null,

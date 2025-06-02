@@ -1,6 +1,7 @@
 package com.example.tomandjerry.ui.screens.home.composables
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
 import com.example.tomandjerry.ui.composables.HorizontalSpacer
+import com.example.tomandjerry.ui.theme.Cultured
 import com.example.tomandjerry.ui.theme.MediumElectricBlue
 import com.example.tomandjerry.ui.theme.SpanishGray
 import com.example.tomandjerry.ui.theme.ibmPlexSans
@@ -33,6 +35,11 @@ fun SearchHomeScreen(modifier: Modifier = Modifier) {
     ) {
         Row(
             modifier = Modifier
+                .border(
+                    width = 1.dp,
+                    color = Cultured,
+                    shape = RoundedCornerShape(12.dp)
+                )
                 .weight(1f)
                 .background(Color.White, RoundedCornerShape(12.dp))
                 .padding(12.dp),
