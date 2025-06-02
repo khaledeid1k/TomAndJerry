@@ -55,8 +55,7 @@ fun PreparationStepItem(modifier: Modifier = Modifier, preparationStep: Preparat
 
         ) {
 
-            Text(
-                text = preparationStep.number,
+            Box(
                 modifier = Modifier
                     .align(Alignment.CenterStart)
                     .border(
@@ -64,11 +63,18 @@ fun PreparationStepItem(modifier: Modifier = Modifier, preparationStep: Preparat
                         color = AzureishWhite,
                         shape = CircleShape
                     )
-                    .padding(horizontal = 14.dp, vertical = 8.dp),
-                color = OceanBlue,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Bold
-            )
+                    .padding(horizontal = 14.dp, vertical = 6.dp),
+
+                ) {
+
+                Text(
+                    text = preparationStep.number,
+                    color = OceanBlue,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold
+                )
+
+            }
         }
         HorizontalSpacer(space = 8.dp)
         Text(

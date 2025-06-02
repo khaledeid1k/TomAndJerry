@@ -34,7 +34,6 @@ fun AddToCartButton(modifier: Modifier = Modifier) {
             disabledContentColor = Color.White
         ),
         shape = RoundedCornerShape(16.dp),
-        //todo review steps view
         modifier = modifier
             .background(Color.White)
             .fillMaxWidth()
