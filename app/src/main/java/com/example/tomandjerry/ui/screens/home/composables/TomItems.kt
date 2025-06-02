@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -25,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomandjerry.R
@@ -108,17 +108,22 @@ fun LazyListScope.tomItemsHomeScreen() {
     }
 }
 
-
+@Preview
 @Composable
 fun TomItemCard(
-    modifier: Modifier = Modifier, tom: TomItem
+    modifier: Modifier = Modifier, tom: TomItem = TomItem(
+        R.drawable.cat1,
+        "Sport Tom",
+        "He runs 1 meter... trips over his boot.",
+        "3",
+        "5"
+    )
 ) {
     Box(
         contentAlignment = Alignment.TopCenter,
     ) {
         Card(
             modifier = modifier
-                .fillMaxSize()
                 .padding(top = 16.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.White
@@ -127,7 +132,7 @@ fun TomItemCard(
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .padding(top = 92.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -156,7 +161,6 @@ fun TomItemCard(
                     fontWeight = FontWeight.Normal,
                     fontFamily = ibmPlexSans
                 )
-                VerticalSpacer(modifier = Modifier.weight(1f))
                 Row(
                     modifier = Modifier.padding(bottom = 8.dp),
                     verticalAlignment = Alignment.CenterVertically,
@@ -165,10 +169,12 @@ fun TomItemCard(
                     CheesesItem(
                         discount = tom.discount,
                         price = tom.price,
-                        modifier = Modifier.padding(
-                            vertical = 6.dp,
-                            horizontal = 8.dp
-                        )
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(
+                                vertical = 6.dp,
+                                horizontal = 8.dp
+                            )
                     )
 
                     Icon(
@@ -187,9 +193,6 @@ fun TomItemCard(
             modifier = Modifier
                 .width(100.dp)
                 .height(100.dp)
-//                .offset(
-//                    y = (-16).dp
-//                )
         )
     }
 }
